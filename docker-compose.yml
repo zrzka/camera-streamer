@@ -1,0 +1,7 @@
+version: '2'
+services:
+  streamer:
+    build: ./streamer
+    privileged: true
+    restart: always
+    network_mode: "host"
