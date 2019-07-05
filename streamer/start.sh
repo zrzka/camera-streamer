@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-echo "Searching for a camera player service ..."
+printf "Searching for a camera player service ... "
 if ! PLAYER_ADDRESS=$(python3 discover.py); then
-    echo "Not found ..."
+    printf "not found\n"    
     exit $?
+else
+    printf "found\n"
 fi
 
-echo "Camera player available at ${PLAYER_ADDRESS} ..."
-echo "Streaming ..."
+printf "Camera player address is %s\n" ${PLAYER_ADDRESS}
+printf "Streaming ...\n"
 raspivid -t 0 -w 800 -h 480 -fps 10 -o udp://${PLAYER_ADDRESS}
