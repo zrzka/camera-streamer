@@ -1,8 +1,16 @@
-# Balena camera streamer
+# Camera streamer
 
 * Discovers `_cameraplayer._udp` service on local network
 * Streams camera to the player via `raspivid`
   * Check the [camera player](https://github.com/zrzka/camera-player) project
+
+## Deployment
+
+This project is ready to be deployed to the [balenaCloud](https://www.balena.io/cloud).
+
+```sh
+balena push $YOUR_APP_NAME
+```
 
 ## Hardware
 
